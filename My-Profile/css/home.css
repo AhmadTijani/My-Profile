@@ -1,0 +1,352 @@
+/*Styling the header*/
+style body {
+  width: 70%;
+}
+
+header {
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 81%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+  transition: 0.5s ease;
+}
+
+header .identity {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+header .navigation {
+  position: relative;
+  float: right;
+}
+header .navigation .navigation-items a {
+  position: relative;
+  color: #fff;
+  font-size: 1.2em;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: 0.3s ease;
+  padding-bottom: 0.3em;
+}
+
+/* the nav item underline*/
+header .navigation .navigation-items a:before {
+  content: "";
+  position: absolute;
+  background: gold;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s ease;
+}
+
+/* final Underline on hover*/
+header .navigation .navigation-items a:hover:before {
+  width: 100%;
+}
+
+/*Main body Section*/
+section {
+  padding: 80px 80px;
+  transition: 0.3s ease;
+}
+
+.web {
+  position: relative;
+  width: 80%;
+  min-height: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.web:before {
+  z-index: 777;
+  content: "";
+  position: absolute;
+  background: white;
+  top: 0;
+  left: 0;
+  width: 80%;
+}
+
+/*Hide the slide by default*/
+.web .content {
+  display: none;
+}
+
+.web .background-content {
+  z-index: 888;
+  color: #fff;
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  font-size: 1.1em;
+}
+
+.web .background-content h1 {
+  font-size: 4em;
+  font-weight: 600;
+  line-height: 75px;
+  margin-bottom: 40px;
+}
+
+.web .background-content h1 span {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.web .background-content p {
+  margin-bottom: 65px;
+}
+
+.web .background-content p .stack-tag {
+  margin-right: 5px;
+  padding: 0px 5px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.877);
+  border-radius: 10%;
+  background-image: linear-gradient(to right, rgba(255, 217, 0, 0.747));
+  transition: all 0.1s;
+  cursor: pointer;
+  white-space: nowrap;
+  background-color: green;
+}
+
+.web .background-content p .skill-tag {
+  margin-right: 5px;
+  padding: 0px 5px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.877);
+  border-radius: 40%;
+  background-image: linear-gradient(to right, rgba(255, 217, 0, 0.747));
+  transition: all 0.1s;
+  line-height: 3;
+  cursor: pointer;
+  white-space: nowrap;
+  background-color: rgb(18, 221, 221);
+  /*tooltip*/
+  position: relative;
+  transition: 0.4s ease;
+}
+
+.web .background-content p .skill-tag:hover {
+  transition: 0.2s ease;
+  border-bottom: 2px dotted green;
+  background-image: linear-gradient(to right, rgba(255, 217, 0, 0.747));
+  background-color: wheat;
+}
+
+/*Tooltip text*/
+.skill-tag .tooltiptext {
+  visibility: hidden;
+  width: fit-content;
+  background-color: rgb(54, 168, 54);
+  color: white;
+  text-align: center;
+  line-height: 1;
+  white-space: nowrap;
+  padding: 5px;
+  border-radius: 6px;
+
+  /*Position the tooltip text*/
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60%;
+
+  /*fade in tooltip*/
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/*Tooltip arrow*/
+.skill-tag .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: greenyellow;
+}
+
+/*Show the tooltip text when you mouse over the tooltip container*/
+.skill-tag:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*button*/
+.btn {
+  background-color: #fff;
+  padding: 15px 35px;
+  color: green;
+  font-weight: 600;
+  border-radius: 2px;
+  font-size: 1.2rem;
+  border-color: white;
+}
+
+/*social media icons*/
+.web .media-icons {
+  z-index: 888;
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease;
+  width: 60px;
+}
+
+.web .hide-media-icons {
+  display: none;
+}
+
+.web .media-icons a {
+  font-size: 1.7em;
+  padding: 10px;
+  margin-right: 2px;
+  margin-left: 20px;
+}
+.web .media-icons a:hover {
+  transform: scale(1.3);
+}
+
+.img-slide {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  clip-path: circle(0% at 0 50%);
+}
+
+.img-slide.active {
+  clip-path: circle(150% at 0 50%);
+  transition: 2s ease;
+  transition-property: clip-path;
+}
+
+/*Media query*/
+@media (max-width: 1000px) {
+  header {
+    padding: 15x 20px;
+  }
+  .web .media-icons {
+    right: 20px;
+  }
+  header .navigation {
+    display: none;
+  }
+  /* when the menu is opened */
+  header .navigation.active {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(1, 1, 1, 0.5);
+    transition: 0.3s ease;
+  }
+  header .navigation.active .navigation-items {
+    background-color: #fff;
+    width: 600px;
+    max-width: 600px;
+    margin: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 5px 25px rgb(1 1 1/ 20%);
+  }
+  header .navigation .navigation-items a {
+    color: #222;
+    font-size: 1.2em;
+    margin: 20px;
+  }
+
+  header .navigation .navigation-items a:before {
+    background-color: #222;
+    height: 5px;
+  }
+
+  .menu-btn {
+    background: url("./../img/teejayA.jpg") no-repeat;
+    background-size: 35px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .menu-btn.active {
+    z-index: 999;
+    background: url("./../img/teejayA.jpg") no-repeat;
+    background-size: 30px;
+    background-position: center;
+    transition: 0.3s ease;
+  }
+}
+
+@media (max-width: 600px) {
+  .img-slide {
+    top: 0;
+    height: 100%;
+    object-fit: cover;
+  }
+  .web .background-content h1 {
+    font-size: 2.3em;
+    letter-spacing: 5px;
+    line-height: 50px;
+    margin-bottom: 10px;
+    margin-top: 130px;
+  }
+
+  .web .background-content .introduction {
+    line-height: 2;
+    /* margin-top: 40px; */
+    margin-bottom: 30px;
+  }
+
+  .app .background-content.active {
+    margin-top: 0px;
+    width: 100%;
+  }
+
+  .app .background-content h1 span {
+    font-size: 1em;
+  }
+
+  .btn {
+    /* margin-top: -30px; */
+    display: none;
+  }
+
+  .web .media-icons {
+    right: 0px;
+    bottom: 40px;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 20px;
+  }
+}
