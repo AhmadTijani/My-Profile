@@ -1,11 +1,11 @@
 /*System.out.println("AhmadTijani");*/
 
 let user = {
-    name: 'Ramoni Tijani',
+    name: 'RamoniTijani',
 }
   console.log(user)
 
-  const myName = 'Ramoni Tijani'
+  const myName = 'RamoniTijani'
 Object.keys({myName})[0]
 
 console.log(myName)
